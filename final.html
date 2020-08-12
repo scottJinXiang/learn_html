@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <h1>My Counter!</h1>
+
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <h2>{{ans}}</h2>
+        Set Number : <input></input>
+    </br>
+        <button v-on:click="show('7')">7</button>
+        <button v-on:click="show('8')">8</button>
+        <button v-on:click="show('9')">9</button>
+        <button v-on:click="show('/')">/</button>
+    </br>
+        <button v-on:click="show('4')">4</button>
+        <button v-on:click="show('5')">5</button>
+        <button v-on:click="show('6')">6</button>
+        <button v-on:click="show('*')">*</button>
+    </br>
+        <button v-on:click="show('3')">3</button>
+        <button v-on:click="show('2')">2</button>
+        <button v-on:click="show('1')">1</button>
+        <button v-on:click="show('-')">-</button>
+    </br>
+        <button v-on:click="show('0')">0</button>
+        <button v-on:click="show('.')">.</button>
+        <button v-on:click="final">=</button>
+        <button v-on:click="show('+')">+</button>
+        <button v-on:click="nreset">Reset</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            ans: ' ',
+            counter: 0
+        },
+        methods:{
+            show:function(n){
+                this.ans += n;
+            },
+            nreset:function(){
+                this.ans = '';
+            },
+            final:function(){
+                this.ans = eval(this.ans);
+            }
+            
+        },
+
+
+        })
+
+
+    </script>
+</body>
+</html>

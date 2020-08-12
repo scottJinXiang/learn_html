@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <a href="./final.html">link ot </a>
+    <h1>My Counter!</h1>
+
+
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <h2>{{ans}}</h2>
+        Set Number : <input v-model="counter"></input>
+    </br>
+        <button v-on:click="plus">+{{counter}}</button>
+        <button v-on:click="minus">-{{counter}}</button>
+        <button v-on:click="ans = 0">Reset</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            ans: 0,
+            counter: 1
+        },
+        methods:{
+            plus:function(){
+                this.ans += parseInt(this.counter);
+            },
+            minus:function(){
+                this.ans -= parseInt(this.counter);
+            }
+        },
+
+
+        })
+
+
+    </script>
+</body>
+</html>
